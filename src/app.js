@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import Test from './components/test';
+import Signup from './components/auth/signup';
 
 export default class App extends Component {
 	render() {
@@ -9,6 +10,7 @@ export default class App extends Component {
 			<div>
 				<div className="inner-container">
 					<Switch>
+						<Route path="/signup" component={Signup} />
 				    <Route path="/test" component={Test} />					
 					</Switch>				
 				</div>
