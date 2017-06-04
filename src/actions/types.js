@@ -2,3 +2,5 @@ export const AUTH_CLIENT = 'auth_client';
 export const UNAUTH_CLIENT = 'unauth_client';
 export const AUTH_ERROR = 'auth_error';
 export const FETCH_MESSAGE = 'fetch_message';
+
+export const CLIENT_TOKEN_NAME = 'peach-token';

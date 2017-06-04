@@ -4,7 +4,7 @@ class Test extends Component {
 	render() {
 		return(
 			<p>
-				Hello World
+				Hello World. This page requires client auth.
 			</p>
 		);
 	}

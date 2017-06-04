@@ -3,7 +3,8 @@ import {
 	AUTH_CLIENT,
 	UNAUTH_CLIENT,
 	AUTH_ERROR,
-	FETCH_MESSAGE
+	FETCH_MESSAGE,
+	CLIENT_TOKEN_NAME
 } from './types';
 
 
@@ -26,7 +27,7 @@ export function signupUser({ email, password, username, name }, cb) {
 				// - update state to indicate user is authenticated
 				dispatch({ type: AUTH_CLIENT });
 				// - save the JWT token to localStorage
-				localStorage.setItem('peach-token', response.data.token);
+				localStorage.setItem(CLIENT_TOKEN_NAME, response.data.token);
 				
 				cb();
 				
@@ -39,3 +40,28 @@ export function signupUser({ email, password, username, name }, cb) {
 	}
 
 }
+
+export function signinUser({ email, password }, cb) {
+	return function(dispatch) {
+		// Submit email/password to server
+		axios.post(`${ROOT_URL}/signin`, { email, password })
+			.then(response => {
+				// if request is good
+				// - update state to indicate user is authenticated
+				dispatch({ type: AUTH_CLIENT });
+
+				// - save the JWT token to localStorage
+				localStorage.setItem(CLIENT_TOKEN_NAME, response.data.token);
+				
+				cb();
+			})
+			.catch((err) => {
+				// if request is bad
+				// - show an error to the user
+				console.log(err);
+				dispatch(authError('Bad Sign In Info'));
+			});
+	}
+
+}
+
