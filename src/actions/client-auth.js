@@ -65,3 +65,8 @@ export function signinUser({ email, password }, cb) {
 
 }
 
+export function signoutUser() {
+	localStorage.removeItem(CLIENT_TOKEN_NAME);
+
+	return { type: UNAUTH_CLIENT };
+}

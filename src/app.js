@@ -5,6 +5,7 @@ import Test from './components/test';
 import Home from './components/home';
 import Signin from './components/auth/signin';
 import Signup from './components/auth/signup';
+import Signout from './components/auth/signout';
 
 import ClientRequireAuth from './components/auth/client_require_auth';
 
@@ -16,6 +17,7 @@ export default class App extends Component {
 					<Switch>
 						<Route path="/signin" component={Signin} />
 						<Route path="/signup" component={Signup} />
+						<Route path="/signout" component={Signout} />
 				    <Route path="/test" component={ClientRequireAuth(Test)} />
 						<Route path="/" component={Home} />
 					</Switch>				
