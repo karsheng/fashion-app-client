@@ -7,7 +7,8 @@ import reduxThunk from 'redux-thunk';
 
 import App from './app';
 import reducers from './reducers';
-import { CLIENT_TOKEN_NAME, AUTH_CLIENT } from './actions/types';
+import { AUTH_CLIENT } from './actions/types';
+import { CLIENT_TOKEN_NAME } from './constants';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import injectTapEventPlugin from 'react-tap-event-plugin';

@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 
 import Test from './components/test';
 import Home from './components/home';
+import Main from './components/client/main';
 import Signin from './components/auth/signin';
 import Signup from './components/auth/signup';
 import Signout from './components/auth/signout';
@@ -15,6 +16,7 @@ export default class App extends Component {
 			<div>
 				<div className="main-container">
 					<Switch>
+						<Route path="/main" component={ClientRequireAuth(Main)} />
 						<Route path="/signin" component={Signin} />
 						<Route path="/signup" component={Signup} />
 						<Route path="/signout" component={Signout} />

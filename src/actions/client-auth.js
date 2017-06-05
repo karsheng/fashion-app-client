@@ -3,12 +3,12 @@ import {
 	AUTH_CLIENT,
 	UNAUTH_CLIENT,
 	AUTH_ERROR,
-	FETCH_MESSAGE,
-	CLIENT_TOKEN_NAME
+	FETCH_MESSAGE
 } from './types';
-
-
-const ROOT_URL = 'http://localhost:3090'; 
+import { 
+	CLIENT_TOKEN_NAME,
+	ROOT_URL
+} from '../constants'; 
 
 
 export function authError(error) {
